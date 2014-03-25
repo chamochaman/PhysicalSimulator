@@ -9,3 +9,16 @@ c:\users\juanfelipe\documents\visual studio 2010\Projects\PhysicalSimulator\Phys
 c:\users\juanfelipe\documents\visual studio 2010\Projects\PhysicalSimulator\PhysicalSimulator\bin\WindowsGL\Debug\Tao.Sdl.dll
 c:\users\juanfelipe\documents\visual studio 2010\Projects\PhysicalSimulator\PhysicalSimulator\obj\x86\Debug\PhysicalSimulator.exe
 c:\users\juanfelipe\documents\visual studio 2010\Projects\PhysicalSimulator\PhysicalSimulator\obj\x86\Debug\PhysicalSimulator.pdb
+C:\Users\José\Documents\GitHub\PhysicalSimulator\PhysicalSimulator\bin\WindowsGL\Debug\Content\Boton1.bmp
+C:\Users\José\Documents\GitHub\PhysicalSimulator\PhysicalSimulator\bin\WindowsGL\Debug\Content\Menu1.bmp
+C:\Users\José\Documents\GitHub\PhysicalSimulator\PhysicalSimulator\bin\WindowsGL\Debug\Lidgren.Network.dll
+C:\Users\José\Documents\GitHub\PhysicalSimulator\PhysicalSimulator\bin\WindowsGL\Debug\MonoGame.Framework.dll
+C:\Users\José\Documents\GitHub\PhysicalSimulator\PhysicalSimulator\bin\WindowsGL\Debug\OpenTK.dll
+C:\Users\José\Documents\GitHub\PhysicalSimulator\PhysicalSimulator\bin\WindowsGL\Debug\Tao.Sdl.dll
+C:\Users\José\Documents\GitHub\PhysicalSimulator\PhysicalSimulator\obj\x86\Debug\PhysicalSimulator.Menu.resources
+C:\Users\José\Documents\GitHub\PhysicalSimulator\PhysicalSimulator\obj\x86\Debug\PhysicalSimulator.csproj.GenerateResource.Cache
+C:\Users\José\Documents\GitHub\PhysicalSimulator\PhysicalSimulator\obj\x86\Debug\PhysicalSimulator.exe
+C:\Users\José\Documents\GitHub\PhysicalSimulator\PhysicalSimulator\obj\x86\Debug\PhysicalSimulator.pdb
+C:\Users\José\Documents\GitHub\PhysicalSimulator\PhysicalSimulator\bin\WindowsGL\Debug\PhysicalSimulator.exe
+C:\Users\José\Documents\GitHub\PhysicalSimulator\PhysicalSimulator\bin\WindowsGL\Debug\PhysicalSimulator.pdb
+C:\Users\José\Documents\GitHub\PhysicalSimulator\PhysicalSimulator\obj\x86\Debug\PhysicalSimulator.csprojResolveAssemblyReference.cache

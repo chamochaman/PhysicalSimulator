@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Windows.Forms;
 #endregion
 
 namespace PhysicalSimulator
@@ -18,8 +19,11 @@ namespace PhysicalSimulator
         [STAThread]
         static void Main()
         {
-            using (var game = new Game1())
-                game.Run();
+            //using (var game = new Game1())
+              //  game.Run();
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
+            Application.Run(new Menu());
         }
     }
 #endif
