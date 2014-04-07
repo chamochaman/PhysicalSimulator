@@ -20,7 +20,7 @@ namespace PhysicalSimulator
         private void button1_Click(object sender, EventArgs e)
         {
             bool login = false;
-            string path = @"C:\Users\José\Documents\GitHub\PhysicalSimulator\PhysicalSimulator\login\login.txt";
+            string path = Directory.GetCurrentDirectory() + "/login.txt"; 
             string usuario, password;
             usuario = txbUsuario.Text;
             password = txbPassword.Text;

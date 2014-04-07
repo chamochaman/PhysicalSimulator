@@ -22,3 +22,16 @@ C:\Users\José\Documents\GitHub\PhysicalSimulator\PhysicalSimulator\obj\x86\Debu
 C:\Users\José\Documents\GitHub\PhysicalSimulator\PhysicalSimulator\bin\WindowsGL\Debug\PhysicalSimulator.exe
 C:\Users\José\Documents\GitHub\PhysicalSimulator\PhysicalSimulator\bin\WindowsGL\Debug\PhysicalSimulator.pdb
 C:\Users\José\Documents\GitHub\PhysicalSimulator\PhysicalSimulator\obj\x86\Debug\PhysicalSimulator.csprojResolveAssemblyReference.cache
+C:\Users\JuanFelipe\Documents\GitHub\PhysicalSimulator\PhysicalSimulator\obj\x86\Debug\PhysicalSimulator.exe
+C:\Users\JuanFelipe\Documents\GitHub\PhysicalSimulator\PhysicalSimulator\obj\x86\Debug\PhysicalSimulator.pdb
+C:\Users\JuanFelipe\Documents\GitHub\PhysicalSimulator\PhysicalSimulator\bin\WindowsGL\Debug\Content\Boton1.bmp
+C:\Users\JuanFelipe\Documents\GitHub\PhysicalSimulator\PhysicalSimulator\bin\WindowsGL\Debug\Content\Menu1.bmp
+C:\Users\JuanFelipe\Documents\GitHub\PhysicalSimulator\PhysicalSimulator\bin\WindowsGL\Debug\PhysicalSimulator.exe
+C:\Users\JuanFelipe\Documents\GitHub\PhysicalSimulator\PhysicalSimulator\bin\WindowsGL\Debug\PhysicalSimulator.pdb
+C:\Users\JuanFelipe\Documents\GitHub\PhysicalSimulator\PhysicalSimulator\bin\WindowsGL\Debug\Lidgren.Network.dll
+C:\Users\JuanFelipe\Documents\GitHub\PhysicalSimulator\PhysicalSimulator\bin\WindowsGL\Debug\MonoGame.Framework.dll
+C:\Users\JuanFelipe\Documents\GitHub\PhysicalSimulator\PhysicalSimulator\bin\WindowsGL\Debug\OpenTK.dll
+C:\Users\JuanFelipe\Documents\GitHub\PhysicalSimulator\PhysicalSimulator\bin\WindowsGL\Debug\Tao.Sdl.dll
+C:\Users\JuanFelipe\Documents\GitHub\PhysicalSimulator\PhysicalSimulator\obj\x86\Debug\PhysicalSimulator.csprojResolveAssemblyReference.cache
+C:\Users\JuanFelipe\Documents\GitHub\PhysicalSimulator\PhysicalSimulator\obj\x86\Debug\PhysicalSimulator.Menu.resources
+C:\Users\JuanFelipe\Documents\GitHub\PhysicalSimulator\PhysicalSimulator\obj\x86\Debug\PhysicalSimulator.csproj.GenerateResource.Cache

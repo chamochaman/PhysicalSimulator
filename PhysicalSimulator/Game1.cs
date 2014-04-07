@@ -19,6 +19,7 @@ namespace PhysicalSimulator
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
         List<Texture2D> texturas = new List<Texture2D>();
+        Entity entity = new Entity();
 
         public Game1()
             : base()
@@ -36,7 +37,7 @@ namespace PhysicalSimulator
         protected override void Initialize()
         {
             // TODO: Add your initialization logic here
-
+            entity.Initialize();
             base.Initialize();
         }
 
@@ -48,9 +49,12 @@ namespace PhysicalSimulator
         {
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
-            texturas.Add(Content.Load<Texture2D>("Menu1.bmp"));
-            texturas.Add(Content.Load<Texture2D>("Boton1.bmp"));
 
+            texturas.Add(Content.Load<Texture2D>("Boton1.bmp"));
+            entity.LoadContent(texturas);
+            /* texturas.Add(Content.Load<Texture2D>("Menu1.bmp"));
+             texturas.Add(Content.Load<Texture2D>("Boton1.bmp"));
+             */
             // TODO: use this.Content to load your game content here
         }
 
@@ -74,6 +78,7 @@ namespace PhysicalSimulator
                 Exit();
 
             // TODO: Add your update logic here
+            entity.Update(gameTime);
 
             base.Update(gameTime);
         }
@@ -88,10 +93,11 @@ namespace PhysicalSimulator
 
             // TODO: Add your drawing code here
 
-            spriteBatch.Begin();
-            spriteBatch.Draw(texturas[0], new Vector2(GraphicsDevice.Viewport.Width / 2 - texturas[0].Width / 2, GraphicsDevice.Viewport.Height / 2 - texturas[0].Height / 2), Color.White);
-            spriteBatch.Draw(texturas[1], new Vector2(GraphicsDevice.Viewport.Width / 2 - texturas[1].Width / 2 + 100, GraphicsDevice.Viewport.Height / 2 - texturas[1].Height / 2 + 80), Color.White);
-            spriteBatch.End();
+            entity.Draw(spriteBatch);
+            //spriteBatch.Begin();
+            //spriteBatch.Draw(texturas[0], new Vector2(GraphicsDevice.Viewport.Width / 2 - texturas[0].Width / 2, GraphicsDevice.Viewport.Height / 2 - texturas[0].Height / 2), Color.White);
+            //spriteBatch.Draw(texturas[1], new Vector2(GraphicsDevice.Viewport.Width / 2 - texturas[1].Width / 2 + 100, GraphicsDevice.Viewport.Height / 2 - texturas[1].Height / 2 + 80), Color.White);
+            //spriteBatch.End();
 
 
             base.Draw(gameTime);
