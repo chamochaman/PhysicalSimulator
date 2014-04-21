@@ -54,9 +54,7 @@ namespace PhysicalSimulator
 
         public void Draw(Vector2 position, SpriteBatch spriteBatch)
         {
-            spriteBatch.Begin();
             spriteBatch.Draw(sprites[currentFrame], position, Color.White);
-            spriteBatch.End();
         }
     }
 }

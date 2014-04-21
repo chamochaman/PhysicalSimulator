@@ -5,6 +5,7 @@ using System.Text;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
+using System.Windows.Forms;
 
 namespace PhysicalSimulator
 {
@@ -36,13 +37,19 @@ namespace PhysicalSimulator
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            animation.Draw(position, spriteBatch);
+            if (spriteBatch != null)
+                animation.Draw(position, spriteBatch);
+            else
+            {
+                MessageBox.Show("Error en la instanciación del spriteBatch.");
+                return;
+            }
         }
 
         public void LoadContent(List<Texture2D> textures)
         {
             animation = new Animation();
-            animation.Initialize(textures, 1, true, true);
+            animation.Initialize(textures, 1, true, true);         
         }
 
         public bool CompareTag(string tag)

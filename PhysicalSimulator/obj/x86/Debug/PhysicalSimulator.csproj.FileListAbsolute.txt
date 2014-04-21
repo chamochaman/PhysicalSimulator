@@ -32,6 +32,13 @@ C:\Users\JuanFelipe\Documents\GitHub\PhysicalSimulator\PhysicalSimulator\bin\Win
 C:\Users\JuanFelipe\Documents\GitHub\PhysicalSimulator\PhysicalSimulator\bin\WindowsGL\Debug\MonoGame.Framework.dll
 C:\Users\JuanFelipe\Documents\GitHub\PhysicalSimulator\PhysicalSimulator\bin\WindowsGL\Debug\OpenTK.dll
 C:\Users\JuanFelipe\Documents\GitHub\PhysicalSimulator\PhysicalSimulator\bin\WindowsGL\Debug\Tao.Sdl.dll
-C:\Users\JuanFelipe\Documents\GitHub\PhysicalSimulator\PhysicalSimulator\obj\x86\Debug\PhysicalSimulator.csprojResolveAssemblyReference.cache
 C:\Users\JuanFelipe\Documents\GitHub\PhysicalSimulator\PhysicalSimulator\obj\x86\Debug\PhysicalSimulator.Menu.resources
 C:\Users\JuanFelipe\Documents\GitHub\PhysicalSimulator\PhysicalSimulator\obj\x86\Debug\PhysicalSimulator.csproj.GenerateResource.Cache
+C:\Users\JuanFelipe\Documents\GitHub\PhysicalSimulator\PhysicalSimulator\obj\x86\Debug\Decl\PhysicalSimulator.exe
+C:\Users\JuanFelipe\Documents\GitHub\PhysicalSimulator\PhysicalSimulator\obj\x86\Debug\Decl\PhysicalSimulator.pdb
+C:\Users\JuanFelipe\Documents\GitHub\PhysicalSimulator\PhysicalSimulator\obj\x86\Debug\CodeContractAnalysisRun.log
+C:\Users\JuanFelipe\Documents\GitHub\PhysicalSimulator\PhysicalSimulator\obj\x86\Debug\PhysicalSimulator.csprojResolveAssemblyReference.cache
+C:\Users\JuanFelipe\Documents\GitHub\PhysicalSimulator\PhysicalSimulator\bin\WindowsGL\Debug\Content\fondo.bmp
+C:\Users\JuanFelipe\Documents\GitHub\PhysicalSimulator\PhysicalSimulator\bin\WindowsGL\Debug\Content\font.bmp
+C:\Users\JuanFelipe\Documents\GitHub\PhysicalSimulator\PhysicalSimulator\bin\WindowsGL\Debug\Content\font1.bmp
+C:\Users\JuanFelipe\Documents\GitHub\PhysicalSimulator\PhysicalSimulator\bin\WindowsGL\Debug\Content\font2.bmp

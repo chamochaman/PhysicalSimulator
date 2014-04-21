@@ -35,7 +35,11 @@ namespace PhysicalSimulator
                 {
                     //Parte la linea por el caracter & que separa usuario y contraseña
                     string[] lineaSplit = linea.Split('&');
-
+                    if (lineaSplit.Count() < 2 || lineaSplit.Count() > 2)
+                    {
+                        MessageBox.Show("Error al leer los registros.");
+                        return;
+                    }
                     if (lineaSplit[0] == usuario && lineaSplit[1] == password)
                     {
                         login = true;

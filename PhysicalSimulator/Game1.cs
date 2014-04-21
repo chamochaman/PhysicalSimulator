@@ -20,6 +20,7 @@ namespace PhysicalSimulator
         SpriteBatch spriteBatch;
         List<Texture2D> texturas = new List<Texture2D>();
         Entity entity = new Entity();
+        TextBox text;
 
         public Game1()
             : base()
@@ -51,7 +52,11 @@ namespace PhysicalSimulator
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
             texturas.Add(Content.Load<Texture2D>("Boton1.bmp"));
+            texturas.Add(Content.Load<Texture2D>("fondo.bmp"));
+            texturas.Add(Content.Load<Texture2D>("font2.bmp"));
             entity.LoadContent(texturas);
+            text = new TextBox(false, 12f, 12f, texturas[1], texturas[2], spriteBatch, new Vector2(50, 50));
+            text.input = "culo";
             /* texturas.Add(Content.Load<Texture2D>("Menu1.bmp"));
              texturas.Add(Content.Load<Texture2D>("Boton1.bmp"));
              */
@@ -76,6 +81,7 @@ namespace PhysicalSimulator
         {
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
+            
 
             // TODO: Add your update logic here
             entity.Update(gameTime);
@@ -93,11 +99,13 @@ namespace PhysicalSimulator
 
             // TODO: Add your drawing code here
 
+            spriteBatch.Begin();
+            text.DrawBackGround();
+            text.DrawText();
             entity.Draw(spriteBatch);
-            //spriteBatch.Begin();
             //spriteBatch.Draw(texturas[0], new Vector2(GraphicsDevice.Viewport.Width / 2 - texturas[0].Width / 2, GraphicsDevice.Viewport.Height / 2 - texturas[0].Height / 2), Color.White);
             //spriteBatch.Draw(texturas[1], new Vector2(GraphicsDevice.Viewport.Width / 2 - texturas[1].Width / 2 + 100, GraphicsDevice.Viewport.Height / 2 - texturas[1].Height / 2 + 80), Color.White);
-            //spriteBatch.End();
+            spriteBatch.End();
 
 
             base.Draw(gameTime);
