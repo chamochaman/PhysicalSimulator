@@ -1,0 +1,125 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>PhysicalSimulator</name>
+    </assembly>
+    <members>
+        <member name="T:PhysicalSimulator.Menu">
+            <summary>
+            menu
+            </summary>
+        </member>
+        <member name="M:PhysicalSimulator.Menu.#ctor">
+            <summary>
+            ebsayo
+            </summary>
+        </member>
+        <member name="F:PhysicalSimulator.Menu.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:PhysicalSimulator.Menu.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:PhysicalSimulator.Menu.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:PhysicalSimulator.Program">
+            <summary>
+            The main class.
+            </summary>
+        </member>
+        <member name="M:PhysicalSimulator.Program.Main">
+            <summary>
+            The main entry point for the application.
+            </summary>
+        </member>
+        <member name="M:PhysicalSimulator.Animation.Initialize(System.Collections.Generic.List{Microsoft.Xna.Framework.Graphics.Texture2D},System.Single,System.Boolean,System.Boolean)">
+            <summary>
+            Inicializa la entidad
+            </summary>
+            <param name="textures"></param>
+            <param name="fps"></param>
+            <param name="looping"></param>
+            <param name="state"></param>
+        </member>
+        <member name="T:PhysicalSimulator.Game1">
+            <summary>
+            This is the main type for your game
+            </summary>
+        </member>
+        <member name="M:PhysicalSimulator.Game1.#ctor">
+            <summary>
+            game1
+            </summary>
+        </member>
+        <member name="M:PhysicalSimulator.Game1.Initialize">
+            <summary>
+            Allows the game to perform any initialization it needs to before starting to run.
+            This is where it can query for any required services and load any non-graphic
+            related content.  Calling base.Initialize will enumerate through any components
+            and initialize them as well.
+            </summary>
+        </member>
+        <member name="M:PhysicalSimulator.Game1.LoadContent">
+            <summary>
+            LoadContent will be called once per game and is the place to load
+            all of your content.
+            </summary>
+        </member>
+        <member name="M:PhysicalSimulator.Game1.UnloadContent">
+            <summary>
+            UnloadContent will be called once per game and is the place to unload
+            all content.
+            </summary>
+        </member>
+        <member name="M:PhysicalSimulator.Game1.Update(Microsoft.Xna.Framework.GameTime)">
+            <summary>
+            Allows the game to run logic such as updating the world,
+            checking for collisions, gathering input, and playing audio.
+            </summary>
+            <param name="gameTime">Provides a snapshot of timing values.</param>
+        </member>
+        <member name="M:PhysicalSimulator.Game1.Draw(Microsoft.Xna.Framework.GameTime)">
+            <summary>
+            This is called when the game should draw itself.
+            </summary>
+            <param name="gameTime">Provides a snapshot of timing values.</param>
+        </member>
+        <member name="T:PhysicalSimulator.Entity">
+            <summary>
+            Entidad entidad entidad
+            </summary>
+        </member>
+        <member name="M:PhysicalSimulator.Entity.Initialize">
+            <summary>
+            Initialize
+            </summary>
+        </member>
+        <member name="M:PhysicalSimulator.Entity.Update(Microsoft.Xna.Framework.GameTime)">
+            <summary>
+            gas
+            </summary>
+            <param name="gameTime"></param>
+        </member>
+        <member name="M:PhysicalSimulator.Entity.SetActive(System.Boolean)">
+            <summary>
+            sadf
+            </summary>
+            <param name="state"></param>
+        </member>
+        <member name="M:PhysicalSimulator.Entity.Draw(Microsoft.Xna.Framework.Graphics.SpriteBatch)">
+            <summary>
+            sadfsadf
+            </summary>
+            <param name="spriteBatch"></param>
+        </member>
+    </members>
+</doc>

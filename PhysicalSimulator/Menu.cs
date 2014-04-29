@@ -10,13 +10,24 @@ using System.IO;
 
 namespace PhysicalSimulator
 {
+    /// <summary>
+    /// Esta clase representa el menú principal para acceder al simulador.
+    /// </summary>
     public partial class Menu : Form
     {
+        /// <summary>
+        /// Inicializa el WinForm
+        /// </summary>
         public Menu()
         {
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Este método está asociado al botón de ingreso, dentro de éste, se revisa que el usuario y contraseña exista.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button1_Click(object sender, EventArgs e)
         {
             bool login = false;

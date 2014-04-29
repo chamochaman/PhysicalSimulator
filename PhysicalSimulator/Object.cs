@@ -5,7 +5,10 @@ using System.Text;
 
 namespace PhysicalSimulator
 {
-    class Object
+    /// <summary>
+    /// Entidad base de la cual hereda Entity.
+    /// </summary>
+    public class Object
     {
     }
 }

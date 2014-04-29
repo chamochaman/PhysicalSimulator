@@ -21,7 +21,9 @@ namespace PhysicalSimulator
         List<Texture2D> texturas = new List<Texture2D>();
         Entity entity = new Entity();
         TextBox text;
-
+        /// <summary>
+        /// game1
+        /// </summary>
         public Game1()
             : base()
         {
