@@ -42,4 +42,6 @@ C:\Users\JuanFelipe\Documents\GitHub\PhysicalSimulator\PhysicalSimulator\obj\x86
 C:\Users\JuanFelipe\Documents\GitHub\PhysicalSimulator\PhysicalSimulator\obj\x86\Debug\Decl\PhysicalSimulator.pdb
 C:\Users\JuanFelipe\Documents\GitHub\PhysicalSimulator\PhysicalSimulator\obj\x86\Debug\CodeContractAnalysisRun.log
 C:\Users\JuanFelipe\Documents\GitHub\PhysicalSimulator\PhysicalSimulator\obj\x86\Debug\PhysicalSimulator.csprojResolveAssemblyReference.cache
+C:\Users\JuanFelipe\Documents\GitHub\PhysicalSimulator\PhysicalSimulator\bin\WindowsGL\Debug\Content\font3.png
+C:\Users\JuanFelipe\Documents\GitHub\PhysicalSimulator\PhysicalSimulator\bin\WindowsGL\Debug\Content\font4.png
 C:\Users\JuanFelipe\Documents\GitHub\PhysicalSimulator\PhysicalSimulator\bin\WindowsGL\Debug\PhysicalSimulator.XML

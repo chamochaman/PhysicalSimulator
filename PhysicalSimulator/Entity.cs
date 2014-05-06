@@ -39,13 +39,36 @@ namespace PhysicalSimulator
         /// </summary>
         private int layer;
 
+        private Vector2 velocity;
+
+        private Vector2 initialVelocity;
+
+        private Vector2 aceleration;
+
+        private float angle;
+
+        private float totalTime;
+
+        public List<Dictionary<float, float>> History;
+
+        private Rectangle rectangle;
+
+
         /// <summary>
         /// Este método sirve para inicializar la entidad.
         /// </summary>
-        public void Initialize()
+        public void Initialize(Vector2 position, Vector2 velocity, Vector2 aceleration, Rectangle rectangle,float angle)
         {
-            this.position.X = 10;
-            this.position.Y = 10;
+            this.position = position;
+            this.initialVelocity = velocity;
+            this.aceleration = aceleration;
+            this.velocity = new Vector2(initialVelocity.X, initialVelocity.Y);
+            this.angle = angle;
+            this.totalTime = 0;
+            this.rectangle = rectangle;
+            History.Add(new Dictionary<float, float>());
+            History.Add(new Dictionary<float, float>());
+            History.Add(new Dictionary<float, float>());
         }
         /// <summary>
         /// Este método sirve para actualizar una entidad.
@@ -53,8 +76,23 @@ namespace PhysicalSimulator
         /// <param name="gameTime">Recibe el delta del tiempo para poder actualizar los atributos de la entidad.</param>
         public void Update(GameTime gameTime)
         {
-            this.position.X++;
-            this.position.Y++;
+            float time = gameTime.ElapsedGameTime.Milliseconds/1000f;
+            
+            this.totalTime += time;
+
+            velocity.Y = (initialVelocity.Y * (float)(Math.Sin(angle * Math.PI / 180))) - (aceleration.Y * totalTime);
+            velocity.X = initialVelocity.X + (aceleration.X * time);
+            velocity.Y = initialVelocity.Y + aceleration.Y * ((totalTime - time));
+
+            position.X = velocity.X * time + position.X;
+
+            if(angle != 0)
+                position.Y = velocity.Y * (float)(Math.Sin(angle * Math.PI / 180)) * time - 0.5f * aceleration.Y * (float)(Math.Pow(time, 2)) + position.Y;
+            else
+                position.Y = (float)(0.5) * aceleration.Y * (float)Math.Pow(time, 2) + time * velocity.Y + position.Y;
+
+            initialVelocity.X = velocity.X;
+
         }
 
         /// <summary>
@@ -101,6 +139,12 @@ namespace PhysicalSimulator
             if (this.tag == tag)
                 return true;
             return false;
+        }
+
+
+        public Entity()
+        {
+            this.History = new List<Dictionary<float, float>>();
         }
     }
 }

@@ -20,7 +20,8 @@ namespace PhysicalSimulator
         SpriteBatch spriteBatch;
         List<Texture2D> texturas = new List<Texture2D>();
         Entity entity = new Entity();
-        TextBox text;
+        TextBox text,text1;
+        int i = 0;
         /// <summary>
         /// game1
         /// </summary>
@@ -40,7 +41,10 @@ namespace PhysicalSimulator
         protected override void Initialize()
         {
             // TODO: Add your initialization logic here
-            entity.Initialize();
+            entity.Initialize(new Vector2(0, 150),
+                                      new Vector2(0, -120),
+                                      new Vector2(0, 98),
+                                      0.0f);
             base.Initialize();
         }
 
@@ -56,9 +60,12 @@ namespace PhysicalSimulator
             texturas.Add(Content.Load<Texture2D>("Boton1.bmp"));
             texturas.Add(Content.Load<Texture2D>("fondo.bmp"));
             texturas.Add(Content.Load<Texture2D>("font2.bmp"));
+            texturas.Add(Content.Load<Texture2D>("font3.png"));
+            texturas.Add(Content.Load<Texture2D>("font4.png"));
             entity.LoadContent(texturas);
-            text = new TextBox(false, 12f, 12f, texturas[1], texturas[2], spriteBatch, new Vector2(50, 50));
-            text.input = "culo";
+            text = new TextBox(false, 0.2f, 0.5f, texturas[1], texturas[3], texturas[4], spriteBatch, new Vector2(200, 100));
+            text1 = new TextBox(false, 0.2f, 0.5f, texturas[1], texturas[3], texturas[4], spriteBatch, new Vector2(200, 200));
+            text1.input = "culo";
             /* texturas.Add(Content.Load<Texture2D>("Menu1.bmp"));
              texturas.Add(Content.Load<Texture2D>("Boton1.bmp"));
              */
@@ -86,7 +93,8 @@ namespace PhysicalSimulator
             
 
             // TODO: Add your update logic here
-            entity.Update(gameTime);
+            entity.Update(gameTime); text.input = i.ToString();
+            i++;
 
             base.Update(gameTime);
         }
@@ -102,8 +110,9 @@ namespace PhysicalSimulator
             // TODO: Add your drawing code here
 
             spriteBatch.Begin();
-            text.DrawBackGround();
+            //text.DrawBackGround();
             text.DrawText();
+            text1.DrawText();
             entity.Draw(spriteBatch);
             //spriteBatch.Draw(texturas[0], new Vector2(GraphicsDevice.Viewport.Width / 2 - texturas[0].Width / 2, GraphicsDevice.Viewport.Height / 2 - texturas[0].Height / 2), Color.White);
             //spriteBatch.Draw(texturas[1], new Vector2(GraphicsDevice.Viewport.Width / 2 - texturas[1].Width / 2 + 100, GraphicsDevice.Viewport.Height / 2 - texturas[1].Height / 2 + 80), Color.White);
