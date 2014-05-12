@@ -12,21 +12,22 @@ namespace PhysicalSimulator
     {
         private bool state;
         private float size;
+        private int textBoxSize;
         private float wordSize;
         private Texture2D background;
         private Texture2D fontLetters;
         private Texture2D fontNumbers;
         private Collider collider;
-        private Vector2 position;
-        private Rectangle rectangle;
+        //private Vector2 position;
+        //private Rectangle rectangle;
         private SpriteBatch spriteBatch;
+        private KeyBoardInput keyboard;
 
         public string input;
 
         public void DrawText()
         {
-            if (this.input.Length == 0)
-                return;
+            DrawBackGround();
 
             float pos = position.X;
             int x = 71;
@@ -56,35 +57,67 @@ namespace PhysicalSimulator
             }
         }
 
+        public void getInput()
+        {
+            if(!this.state)
+                return;
+            input = keyboard.getCurrentKeyboardInput(input, textBoxSize);
+        }
+
         public void DrawBackGround()
         {
-            spriteBatch.Draw(background, position, Color.White);
+            float pos = position.X; 
+            int x = 71;
+            int y = 98;
+            Texture2D font = fontNumbers;
+            for (int i = 0; i < textBoxSize; ++i)
+            {
+                spriteBatch.Draw(font, new Vector2(pos, position.Y), new Rectangle(4 * x + 1 * 4 + 2, 1 * y + 1 * 1 + 2, x, y), Color.White, 0, new Vector2(325, 150), size, SpriteEffects.None, 0);
+                pos += x * size;
+            }
+        }
+
+        public bool getState()
+        {
+            if (state)
+                return true;
+            return false;
         }
 
         public void setState()
         {
-            if (this.Collide())
+            if (this.Collide() && state == false)
+            {
+                input = string.Empty;
                 state = true;
-            else
+            }
+            else if(this.collider.ClickOutMouseCollider(this) && state == true)
+            {
+               // input = string.Empty;
                 state = false;
+            }
         }
 
         public bool Collide()
         {
-            return this.collider.ClickOnMouseCollider(this, Mouse.GetState());
+            return this.collider.ClickOnMouseCollider(this);
         }
 
-        public TextBox(bool state, float size, float wordSize, Texture2D background, Texture2D font1, Texture2D font2, SpriteBatch sb, Vector2 position, Rectangle rectangle)
+        public TextBox(bool state, float size, float wordSize, int textBoxSize, Texture2D background, Texture2D font1, Texture2D font2, SpriteBatch sb, Vector2 position, Rectangle rectangle)
         {
-            this.rectangle = rectangle;
+            base.rectangle = rectangle;
             this.state = state;
             this.size = size;
             this.wordSize = wordSize;
             this.background = background;
             this.spriteBatch = sb;
-            this.position = position;
+            base.position = position;
             this.fontLetters = font1;
             this.fontNumbers = font2;
+            this.textBoxSize = textBoxSize;
+            this.collider = new Collider();
+            this.input = string.Empty;
+            this.keyboard = new KeyBoardInput();
         }
     }
 }

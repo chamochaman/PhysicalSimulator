@@ -20,7 +20,7 @@ namespace PhysicalSimulator
         SpriteBatch spriteBatch;
         List<Texture2D> texturas = new List<Texture2D>();
         Entity entity = new Entity();
-        TextBox text,text1;
+        TextBox text,text1, mousex,mousey;
         int i = 0;
         /// <summary>
         /// game1
@@ -42,9 +42,10 @@ namespace PhysicalSimulator
         {
             // TODO: Add your initialization logic here
             entity.Initialize(new Vector2(0, 150),
-                                      new Vector2(0, -120),
-                                      new Vector2(0, 98),
-                                      0.0f);
+                              new Vector2(0, -120),
+                              new Vector2(0, 98),
+                              new Rectangle(0,150,146,40),
+                              0.0f);
             base.Initialize();
         }
 
@@ -63,8 +64,10 @@ namespace PhysicalSimulator
             texturas.Add(Content.Load<Texture2D>("font3.png"));
             texturas.Add(Content.Load<Texture2D>("font4.png"));
             entity.LoadContent(texturas);
-            text = new TextBox(false, 0.2f, 0.5f, texturas[1], texturas[3], texturas[4], spriteBatch, new Vector2(200, 100));
-            text1 = new TextBox(false, 0.2f, 0.5f, texturas[1], texturas[3], texturas[4], spriteBatch, new Vector2(200, 200));
+            text = new TextBox(false, 0.2f, 0.5f, 6, texturas[1], texturas[3], texturas[4], spriteBatch, new Vector2(200, 100), new Rectangle(200 - (int)(71 * 0.5) * 6, 100 - (int)(98 * 0.5), (int)(71 * 0.5) * 6, (int)(98 * 0.5)));
+            text1 = new TextBox(false, 0.2f, 0.5f, 6, texturas[1], texturas[3], texturas[4], spriteBatch, new Vector2(200, 200), new Rectangle(200, 200, 146, 40));
+            mousex = new TextBox(false, 0.2f, 0.5f, 6, texturas[1], texturas[3], texturas[4], spriteBatch, new Vector2(600, 200), new Rectangle(600, 200, 146, 40));
+            mousey = new TextBox(false, 0.2f, 0.5f, 6, texturas[1], texturas[3], texturas[4], spriteBatch, new Vector2(600, 250), new Rectangle(700, 200, 146, 40));
             text1.input = "culo";
             /* texturas.Add(Content.Load<Texture2D>("Menu1.bmp"));
              texturas.Add(Content.Load<Texture2D>("Boton1.bmp"));
@@ -93,8 +96,22 @@ namespace PhysicalSimulator
             
 
             // TODO: Add your update logic here
-            entity.Update(gameTime); text.input = i.ToString();
+            entity.Update(gameTime); 
+            //text.input = i.ToString();
+            text.setState();
+            if (text.getState())
+            {
+                text.getInput();
+            }
+            i++; text1.setState();
+            if (text1.getState())
+            {
+                text1.getInput();
+            }
             i++;
+
+            mousex.input = Mouse.GetState().X.ToString();
+            mousey.input = Mouse.GetState().Y.ToString();
 
             base.Update(gameTime);
         }
@@ -113,6 +130,8 @@ namespace PhysicalSimulator
             //text.DrawBackGround();
             text.DrawText();
             text1.DrawText();
+            mousex.DrawText();
+            mousey.DrawText();
             entity.Draw(spriteBatch);
             //spriteBatch.Draw(texturas[0], new Vector2(GraphicsDevice.Viewport.Width / 2 - texturas[0].Width / 2, GraphicsDevice.Viewport.Height / 2 - texturas[0].Height / 2), Color.White);
             //spriteBatch.Draw(texturas[1], new Vector2(GraphicsDevice.Viewport.Width / 2 - texturas[1].Width / 2 + 100, GraphicsDevice.Viewport.Height / 2 - texturas[1].Height / 2 + 80), Color.White);

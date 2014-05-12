@@ -38,6 +38,11 @@
             the contents of this method with the code editor.
             </summary>
         </member>
+        <member name="T:PhysicalSimulator.Object">
+            <summary>
+            Entidad base de la cual hereda Entity.
+            </summary>
+        </member>
         <member name="T:PhysicalSimulator.Program">
             <summary>
             The main class.
@@ -46,11 +51,6 @@
         <member name="M:PhysicalSimulator.Program.Main">
             <summary>
             The main entry point for the application.
-            </summary>
-        </member>
-        <member name="T:PhysicalSimulator.Object">
-            <summary>
-            Entidad base de la cual hereda Entity.
             </summary>
         </member>
         <member name="T:PhysicalSimulator.Animation">
@@ -193,7 +193,7 @@
             Representa la capa de la escena en la cual se encuentra la entidad.
             </summary>
         </member>
-        <member name="M:PhysicalSimulator.Entity.Initialize(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,System.Single)">
+        <member name="M:PhysicalSimulator.Entity.Initialize(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Rectangle,System.Single)">
             <summary>
             Este método sirve para inicializar la entidad.
             </summary>

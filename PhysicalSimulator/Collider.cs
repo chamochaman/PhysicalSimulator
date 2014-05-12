@@ -11,21 +11,28 @@ namespace PhysicalSimulator
     {
         public bool BoxCollider(Object boxCollider, Object entity)
         {
-            if (entity.getRectangle().Intersects(boxCollider.getRectangle()))
+            if (entity.rectangle.Intersects(boxCollider.rectangle))
                 return true;
             return false;
         }
 
-        public bool MouseCollider(Object boxCollider, MouseState mouse)
+        public bool MouseCollider(Object boxCollider)
         {
-            if (boxCollider.getRectangle().Intersects(new Rectangle(mouse.X, mouse.Y, 2, 2)))
+            if (boxCollider.rectangle.Intersects(new Rectangle(Mouse.GetState().X, Mouse.GetState().Y, 2, 2)))
                 return true;
             return false;
         }
 
-        public bool ClickOnMouseCollider(Object boxCollider, MouseState mouse)
+        public bool ClickOnMouseCollider(Object boxCollider)
         {
-            if (MouseCollider(boxCollider, mouse) && mouse.LeftButton == ButtonState.Pressed)
+            if (MouseCollider(boxCollider) && Mouse.GetState().LeftButton == ButtonState.Pressed)
+                return true;
+            return false;
+        }
+
+        public bool ClickOutMouseCollider(Object boxCollider)
+        {
+            if (!MouseCollider(boxCollider) && Mouse.GetState().LeftButton == ButtonState.Pressed)
                 return true;
             return false;
         }
