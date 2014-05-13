@@ -2,13 +2,12 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework;
 
 namespace PhysicalSimulator
 {
-    class TextBox : Object
+    class Button : Object
     {
         private bool state;
         private float size;
@@ -19,7 +18,6 @@ namespace PhysicalSimulator
         private Texture2D fontNumbers;
         private Collider collider;
         private SpriteBatch spriteBatch;
-        private KeyBoardInput keyboard;
 
         public string input;
 
@@ -55,20 +53,10 @@ namespace PhysicalSimulator
             }
         }
 
-        public void TurnOnBuffer()
+        public bool Pressed()
         {
-            this.setState();
-            if (this.getState())
-            {
-                this.getInput();
-            }
-        }
 
-        public void getInput()
-        {
-            if(!this.state)
-                return;
-            input = keyboard.getCurrentKeyboardInput(input, textBoxSize);
+            return this.setState(); 
         }
 
         public void DrawBackGround()
@@ -91,18 +79,19 @@ namespace PhysicalSimulator
             return false;
         }
 
-        public void setState()
+        public bool setState()
         {
-            if (this.Collide() && state == false)
+            if (this.Collide())
             {
-                input = string.Empty;
-                state = true;
+                //input = string.Empty;
+                return true;
             }
             else if(this.collider.ClickOutMouseCollider(this) && state == true)
             {
                // input = string.Empty;
-                state = false;
+                return false;
             }
+            return false;
         }
 
         public bool Collide()
@@ -110,7 +99,7 @@ namespace PhysicalSimulator
             return this.collider.ClickOnMouseCollider(this);
         }
 
-        public TextBox(bool state, float size, float wordSize, int textBoxSize, Texture2D background, Texture2D font1, Texture2D font2, SpriteBatch sb, Vector2 position, Rectangle rectangle)
+        public Button(bool state, float size, float wordSize, int textBoxSize, Texture2D background, Texture2D font1, Texture2D font2, SpriteBatch sb, Vector2 position, Rectangle rectangle)
         {
             base.rectangle = rectangle;
             this.state = state;
@@ -124,7 +113,6 @@ namespace PhysicalSimulator
             this.textBoxSize = textBoxSize;
             this.collider = new Collider();
             this.input = string.Empty;
-            this.keyboard = new KeyBoardInput();
         }
     }
 }
