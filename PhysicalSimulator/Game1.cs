@@ -126,9 +126,31 @@ namespace PhysicalSimulator
                 ellapsedTimeButton = 0;
                 this.active = true;
                 Iniciar.input = "pausar";
+                int vx, vy, ax, ay;
+                if (tbVelocidadX.input == "")
+                    vx = 0;
+                else
+                    vx = int.Parse(tbVelocidadX.input);
+
+                if (tbVelocidadY.input == "")
+                    vy = 0;
+                else
+                    vy = int.Parse(tbVelocidadY.input);
+
+                if (tbAceleracionX.input == "")
+                    ax = 0;
+                else
+                    ax = int.Parse(tbAceleracionX.input);
+                if (tbAceleracionY.input == "")
+                    ay = 0;
+                else
+                    ay = int.Parse(tbAceleracionY.input);
+
+
+                
                 entity.Initialize(new Vector2(0, 150),
-                                    new Vector2(int.Parse(tbVelocidadX.input), int.Parse(tbVelocidadY.input)),
-                                    new Vector2(int.Parse(tbAceleracionX.input), int.Parse(tbAceleracionY.input)),
+                                    new Vector2(vx, vy),
+                                    new Vector2(ax, ay),
                                     new Rectangle(),
                                     0.0f);
             }
