@@ -38,10 +38,162 @@
             the contents of this method with the code editor.
             </summary>
         </member>
+        <member name="T:PhysicalSimulator.Collider">
+            <summary>
+            Esta clase representa todas las colisiones activadas en escena.
+            </summary>
+        </member>
+        <member name="M:PhysicalSimulator.Collider.BoxCollider(PhysicalSimulator.Object,PhysicalSimulator.Object)">
+            <summary>
+            Este método verifica que un objeto no se estrelle contra otro objeto
+            </summary>
+            <param name="boxCollider">La entidad contra la cual se verifica el impácto de la entidad</param>
+            <param name="entity">La entidad base que será la que colisionará contra la caja</param>
+            <returns>retorna true si la colisión se dio, de lo contrario, retorna false</returns>
+        </member>
+        <member name="M:PhysicalSimulator.Collider.MouseCollider(PhysicalSimulator.Object)">
+            <summary>
+            Este método verifica si el rectangulo del puntero del mouse colisiona contra otro objeto.
+            </summary>
+            <param name="boxCollider">Objeto contra el cual se verificará la colisión del mouse</param>
+            <returns>retorna true si la colisión se dio, de lo contrario, retorna false</returns>
+        </member>
+        <member name="M:PhysicalSimulator.Collider.ClickOnMouseCollider(PhysicalSimulator.Object)">
+            <summary>
+            Este método verifica si ademas de hacer colisión el mouse contra otro objeto, tambien se hizo click sobre el mismo.
+            </summary>
+            <param name="boxCollider">Objeto contra el cual se verificará la colisión del mouse y se presionará el click</param>
+            <returns>retorna true si la colisión se dio, de lo contrario, retorna false</returns>
+        </member>
+        <member name="M:PhysicalSimulator.Collider.ClickOutMouseCollider(PhysicalSimulator.Object)">
+            <summary>
+            Este método verifica si luego de estar activa una colisón con click, el mouse salio de la colisión y realizó click en otro
+            lugar diferente al objeto perteneciente a la colisión.
+            </summary>
+            <param name="boxCollider">Objeto contra el cual se verificará la colisión del mouse y se presionará el click</param>
+            <returns>retorna true si la colisión se dio, de lo contrario, retorna false</returns>
+        </member>
         <member name="T:PhysicalSimulator.Object">
             <summary>
             Entidad base de la cual hereda Entity.
             </summary>
+        </member>
+        <member name="P:PhysicalSimulator.Object.position">
+            <summary>
+            Representa la posición de un objeto en la escena.
+            </summary>
+        </member>
+        <member name="P:PhysicalSimulator.Object.rectangle">
+            <summary>
+            Representa el rectangulo de un objeto en le escena, sirve para calcular las colisiones.
+            </summary>
+        </member>
+        <member name="F:PhysicalSimulator.TextBox.state">
+            <summary>
+            Representa el estado del textbox, si esta activo en escena o no.
+            </summary>
+        </member>
+        <member name="F:PhysicalSimulator.TextBox.size">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:PhysicalSimulator.TextBox.textBoxSize">
+            <summary>
+            Representa el tamaño máximo del textBox
+            </summary>
+        </member>
+        <member name="F:PhysicalSimulator.TextBox.wordSize">
+            <summary>
+            Representa el tamaño de la letra dentro del textBox
+            </summary>
+        </member>
+        <member name="F:PhysicalSimulator.TextBox.background">
+            <summary>
+            Representa la textura del fondo del textBox
+            </summary>
+        </member>
+        <member name="F:PhysicalSimulator.TextBox.fontLetters">
+            <summary>
+            Representa la textura con las letras para el textbox
+            </summary>
+        </member>
+        <member name="F:PhysicalSimulator.TextBox.fontNumbers">
+            <summary>
+            Representa la textura con los números para el textbox
+            </summary>
+        </member>
+        <member name="F:PhysicalSimulator.TextBox.collider">
+            <summary>
+            Representa el colisionador asociado a la entidad.
+            </summary>
+        </member>
+        <member name="F:PhysicalSimulator.TextBox.spriteBatch">
+            <summary>
+            Representa la clase de XNA que permite renderizar en pantalla.
+            </summary>
+        </member>
+        <member name="F:PhysicalSimulator.TextBox.keyboard">
+            <summary>
+            Representa la clase que captura las teclas presionadas.
+            </summary>
+        </member>
+        <member name="F:PhysicalSimulator.TextBox.input">
+            <summary>
+            Represeta el valor que tiene el textbox.
+            </summary>
+        </member>
+        <member name="M:PhysicalSimulator.TextBox.DrawText">
+            <summary>
+            Este método se encarga de pintar en pantalla las teclas que hayan sido presionadas cuando el textbox estaba activo.
+            </summary>
+        </member>
+        <member name="M:PhysicalSimulator.TextBox.TurnOnBuffer">
+            <summary>
+            Este método permite activar el estado del buffer que recibe lo ingresado por teclado
+            </summary>
+        </member>
+        <member name="M:PhysicalSimulator.TextBox.getInput">
+            <summary>
+            Este método guarda la entrada del teclado en el textbox
+            </summary>
+        </member>
+        <member name="M:PhysicalSimulator.TextBox.DrawBackGround">
+            <summary>
+            Este método pinta el fondo del textbox.
+            </summary>
+        </member>
+        <member name="M:PhysicalSimulator.TextBox.getState">
+            <summary>
+            Este método devuelve el estado actual del textbox
+            </summary>
+            <returns>retorna true si el estado está activo, sino, retorna false</returns>
+        </member>
+        <member name="M:PhysicalSimulator.TextBox.setState">
+            <summary>
+            Este método permite modificar el estado del textbox.
+            </summary>
+        </member>
+        <member name="M:PhysicalSimulator.TextBox.Collide">
+            <summary>
+            Este método verifica si existe colisión para cambiar el estado del textbox.
+            </summary>
+            <returns>retorna true si hay colisión, sino, retorna false</returns>
+        </member>
+        <member name="M:PhysicalSimulator.TextBox.#ctor(System.Boolean,System.Single,System.Single,System.Int32,Microsoft.Xna.Framework.Graphics.Texture2D,Microsoft.Xna.Framework.Graphics.Texture2D,Microsoft.Xna.Framework.Graphics.Texture2D,Microsoft.Xna.Framework.Graphics.SpriteBatch,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Rectangle)">
+            <summary>
+            Constructor del textbox
+            </summary>
+            <param name="state"></param>
+            <param name="size"></param>
+            <param name="wordSize"></param>
+            <param name="textBoxSize"></param>
+            <param name="background"></param>
+            <param name="font1"></param>
+            <param name="font2"></param>
+            <param name="sb"></param>
+            <param name="position"></param>
+            <param name="rectangle"></param>
         </member>
         <member name="T:PhysicalSimulator.Program">
             <summary>
@@ -52,6 +204,90 @@
             <summary>
             The main entry point for the application.
             </summary>
+        </member>
+        <member name="F:PhysicalSimulator.Button.state">
+            <summary>
+            Representa el estado del botón, si esta activo en escena o no.
+            </summary>
+        </member>
+        <member name="F:PhysicalSimulator.Button.size">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:PhysicalSimulator.Button.textBoxSize">
+            <summary>
+            Representa el tamaño máximo del botón
+            </summary>
+        </member>
+        <member name="F:PhysicalSimulator.Button.wordSize">
+            <summary>
+            Representa el tamaño de la letra dentro del botón
+            </summary>
+        </member>
+        <member name="F:PhysicalSimulator.Button.background">
+            <summary>
+            Representa la textura del fondo del botón
+            </summary>
+        </member>
+        <member name="F:PhysicalSimulator.Button.fontLetters">
+            <summary>
+            Representa la textura con las letras para el botón
+            </summary>
+        </member>
+        <member name="F:PhysicalSimulator.Button.fontNumbers">
+            <summary>
+            Representa la textura con los números para el botón
+            </summary>
+        </member>
+        <member name="F:PhysicalSimulator.Button.collider">
+            <summary>
+            Representa el colisionador asociado a la entidad.
+            </summary>
+        </member>
+        <member name="F:PhysicalSimulator.Button.spriteBatch">
+            <summary>
+            Representa la clase de XNA que permite renderizar en pantalla.
+            </summary>
+        </member>
+        <member name="F:PhysicalSimulator.Button.input">
+            <summary>
+            Represeta el valor que tiene el botón.
+            </summary>
+        </member>
+        <member name="M:PhysicalSimulator.Button.DrawText">
+            <summary>
+            Este método se encarga de pintar en pantalla el texto dentro del botón.
+            </summary>
+        </member>
+        <member name="M:PhysicalSimulator.Button.Pressed">
+            <summary>
+            Este método cambia el estado del botón si es presionado
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:PhysicalSimulator.Button.DrawBackGround">
+            <summary>
+            Este método pinta el fondo del botón
+            </summary>
+        </member>
+        <member name="M:PhysicalSimulator.Button.getState">
+            <summary>
+            Este método retorna el estado del botón
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:PhysicalSimulator.Button.setState">
+            <summary>
+            Este método cambia el estado del botón si se presionó
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:PhysicalSimulator.Button.Collide">
+            <summary>
+            Este método verifica la colisión del botón con el mouse.
+            </summary>
+            <returns></returns>
         </member>
         <member name="T:PhysicalSimulator.Animation">
             <summary>
@@ -114,6 +350,42 @@
             </summary>
             <param name="position">Recibe la posición para pintarla</param>
             <param name="spriteBatch">Recibe el SpriteBatch que le permitirá renderizar en pantalla.</param>
+        </member>
+        <member name="T:PhysicalSimulator.KeyBoardInput">
+            <summary>
+            Esta clase es la que captura la información proveniente del teclado.
+            </summary>
+        </member>
+        <member name="F:PhysicalSimulator.KeyBoardInput.PressedKeys">
+            <summary>
+            Representa una Hashtable con todas las teclas presionadas, esto con el fin de que el textbox solo atrape las teclas que se presionaron y se levantaron,
+            y no lo haga por defecto con impulsos eléctricos provenientes del teclado.
+            </summary>
+        </member>
+        <member name="M:PhysicalSimulator.KeyBoardInput.#ctor">
+            <summary>
+            prepara la HashTable con todas las teclas.
+            </summary>
+        </member>
+        <member name="M:PhysicalSimulator.KeyBoardInput.getCurrentKeyboardInput(System.String,System.Int32)">
+            <summary>
+            Este método atrapa las teclas presionadas por teclado
+            </summary>
+            <param name="input">representa la entrada de datos</param>
+            <param name="size">representa el máximo de caracteres que va a leer</param>
+            <returns>retorna toda la cadena de teclas presionadas</returns>
+        </member>
+        <member name="M:PhysicalSimulator.KeyBoardInput.activedKeys">
+            <summary>
+            Este método reactiva las teclas que hayan sido presionadas y luego levantadas.
+            </summary>
+        </member>
+        <member name="M:PhysicalSimulator.KeyBoardInput.getKey(Microsoft.Xna.Framework.Input.Keys)">
+            <summary>
+            Este método retorna un string asociado a la tecla presionada
+            </summary>
+            <param name="key">Representa la tecla presionada</param>
+            <returns>retorna un string con la tecla presionada</returns>
         </member>
         <member name="T:PhysicalSimulator.Game1">
             <summary>
@@ -191,6 +463,41 @@
         <member name="F:PhysicalSimulator.Entity.layer">
             <summary>
             Representa la capa de la escena en la cual se encuentra la entidad.
+            </summary>
+        </member>
+        <member name="F:PhysicalSimulator.Entity.velocity">
+            <summary>
+            Representa el vector velocidad de la entidad.
+            </summary>
+        </member>
+        <member name="F:PhysicalSimulator.Entity.initialVelocity">
+            <summary>
+            Representa el vector con la velocidad inicial de la entidad, este es utilizado para calcular el movimiento de la misma.
+            </summary>
+        </member>
+        <member name="F:PhysicalSimulator.Entity.aceleration">
+            <summary>
+            Representa el vector con la aceleración de la entidad.
+            </summary>
+        </member>
+        <member name="F:PhysicalSimulator.Entity.angle">
+            <summary>
+            Representa el angulo de dirección de la entidad.
+            </summary>
+        </member>
+        <member name="F:PhysicalSimulator.Entity.totalTime">
+            <summary>
+            Representa el tiempo total transcurrido desde que se empezo a actualizar la entidad
+            </summary>
+        </member>
+        <member name="F:PhysicalSimulator.Entity.History">
+            <summary>
+            Representa el historico de la entidad alojado en una HashTable
+            </summary>
+        </member>
+        <member name="F:PhysicalSimulator.Entity.rectangle">
+            <summary>
+            Representa el rectangulo de colisión de la entidad.
             </summary>
         </member>
         <member name="M:PhysicalSimulator.Entity.Initialize(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Rectangle,System.Single)">

@@ -38,19 +38,33 @@ namespace PhysicalSimulator
         /// Representa la capa de la escena en la cual se encuentra la entidad.
         /// </summary>
         private int layer;
-
+        /// <summary>
+        /// Representa el vector velocidad de la entidad.
+        /// </summary>
         private Vector2 velocity;
-
+        /// <summary>
+        /// Representa el vector con la velocidad inicial de la entidad, este es utilizado para calcular el movimiento de la misma.
+        /// </summary>
         private Vector2 initialVelocity;
-
+        /// <summary>
+        /// Representa el vector con la aceleración de la entidad.
+        /// </summary>
         private Vector2 aceleration;
-
+        /// <summary>
+        /// Representa el angulo de dirección de la entidad.
+        /// </summary>
         private float angle;
-
+        /// <summary>
+        /// Representa el tiempo total transcurrido desde que se empezo a actualizar la entidad
+        /// </summary>
         private float totalTime;
-
-        public List<Dictionary<float, float>> History;
-
+        /// <summary>
+        /// Representa el historico de la entidad alojado en una HashTable
+        /// </summary>
+        public List<Dictionary<float, List<float>>> History;
+        /// <summary>
+        /// Representa el rectangulo de colisión de la entidad.
+        /// </summary>
         private Rectangle rectangle;
 
 
@@ -66,9 +80,9 @@ namespace PhysicalSimulator
             this.angle = angle;
             this.totalTime = 0;
             this.rectangle = rectangle;
-            History.Add(new Dictionary<float, float>());
-            History.Add(new Dictionary<float, float>());
-            History.Add(new Dictionary<float, float>());
+            History.Add(new Dictionary<float, List<float>>());
+            History.Add(new Dictionary<float, List<float>>());
+            History.Add(new Dictionary<float, List<float>>());
         }
         /// <summary>
         /// Este método sirve para actualizar una entidad.
@@ -77,6 +91,9 @@ namespace PhysicalSimulator
         public void Update(GameTime gameTime)
         {
             float time = gameTime.ElapsedGameTime.Milliseconds/1000f;
+            this.History[0].Add(totalTime, new List<float> { position.X, position.Y });
+            this.History[1].Add(totalTime, new List<float> { velocity.X, velocity.Y });
+            this.History[2].Add(totalTime, new List<float> { aceleration.X, aceleration.Y });
             
             this.totalTime += time;
 
@@ -144,7 +161,7 @@ namespace PhysicalSimulator
 
         public Entity()
         {
-            this.History = new List<Dictionary<float, float>>();
+            this.History = new List<Dictionary<float, List<float>>>();
         }
     }
 }

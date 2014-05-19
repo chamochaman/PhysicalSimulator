@@ -6,9 +6,20 @@ using Microsoft.Xna.Framework.Input;
 
 namespace PhysicalSimulator
 {
+    /// <summary>
+    /// Esta clase es la que captura la información proveniente del teclado.
+    /// </summary>
     class KeyBoardInput
     {
+        /// <summary>
+        /// Representa una Hashtable con todas las teclas presionadas, esto con el fin de que el textbox solo atrape las teclas que se presionaron y se levantaron,
+        /// y no lo haga por defecto con impulsos eléctricos provenientes del teclado.
+        /// </summary>
         private Dictionary<char, bool> PressedKeys;
+
+        /// <summary>
+        /// prepara la HashTable con todas las teclas.
+        /// </summary>
         public KeyBoardInput()
         {
             this.PressedKeys = new Dictionary<char, bool>();
@@ -19,6 +30,12 @@ namespace PhysicalSimulator
             PressedKeys.Add('-', false);
         }
 
+        /// <summary>
+        /// Este método atrapa las teclas presionadas por teclado
+        /// </summary>
+        /// <param name="input">representa la entrada de datos</param>
+        /// <param name="size">representa el máximo de caracteres que va a leer</param>
+        /// <returns>retorna toda la cadena de teclas presionadas</returns>
         public string getCurrentKeyboardInput(string input, int size)
         {
             var keys = Keyboard.GetState().GetPressedKeys();
@@ -45,6 +62,9 @@ namespace PhysicalSimulator
             return input;
         }
 
+        /// <summary>
+        /// Este método reactiva las teclas que hayan sido presionadas y luego levantadas.
+        /// </summary>
         private void activedKeys()
         {
             if (Keyboard.GetState().IsKeyUp(Keys.NumPad0))
@@ -71,6 +91,11 @@ namespace PhysicalSimulator
                 PressedKeys['-'] = false;
         }
 
+        /// <summary>
+        /// Este método retorna un string asociado a la tecla presionada
+        /// </summary>
+        /// <param name="key">Representa la tecla presionada</param>
+        /// <returns>retorna un string con la tecla presionada</returns>
         private string getKey(Keys key)
         {
             switch (key)

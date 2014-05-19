@@ -47,7 +47,7 @@ namespace PhysicalSimulator
         protected override void Initialize()
         {
             // TODO: Add your initialization logic here
-            entity.Initialize(new Vector2(0, 150),
+            entity.Initialize(new Vector2(0, 305),
                               new Vector2(0, -120),
                               new Vector2(0, 98),
                               new Rectangle(0,150,146,40),

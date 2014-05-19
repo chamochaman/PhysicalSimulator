@@ -9,18 +9,49 @@ namespace PhysicalSimulator
 {
     class Button : Object
     {
+        /// <summary>
+        /// Representa el estado del botón, si esta activo en escena o no.
+        /// </summary>
         private bool state;
+        /// <summary>
+        /// 
+        /// </summary>
         private float size;
+        /// <summary>
+        /// Representa el tamaño máximo del botón
+        /// </summary>
         private int textBoxSize;
+        /// <summary>
+        /// Representa el tamaño de la letra dentro del botón
+        /// </summary>
         private float wordSize;
+        /// <summary>
+        /// Representa la textura del fondo del botón
+        /// </summary>
         private Texture2D background;
+        /// <summary>
+        /// Representa la textura con las letras para el botón
+        /// </summary>
         private Texture2D fontLetters;
+        /// <summary>
+        /// Representa la textura con los números para el botón
+        /// </summary>
         private Texture2D fontNumbers;
+        /// <summary>
+        /// Representa el colisionador asociado a la entidad.
+        /// </summary>
         private Collider collider;
+        /// <summary>
+        /// Representa la clase de XNA que permite renderizar en pantalla.
+        /// </summary>
         private SpriteBatch spriteBatch;
-
+        /// <summary>
+        /// Represeta el valor que tiene el botón.
+        /// </summary>
         public string input;
-
+        /// <summary>
+        /// Este método se encarga de pintar en pantalla el texto dentro del botón.
+        /// </summary>
         public void DrawText()
         {
             DrawBackGround();
@@ -52,13 +83,18 @@ namespace PhysicalSimulator
                 pos += x*size;
             }
         }
-
+        /// <summary>
+        /// Este método cambia el estado del botón si es presionado
+        /// </summary>
+        /// <returns></returns>
         public bool Pressed()
         {
-
             return this.setState(); 
         }
 
+        /// <summary>
+        /// Este método pinta el fondo del botón
+        /// </summary>
         public void DrawBackGround()
         {
             float pos = position.X; 
@@ -72,6 +108,10 @@ namespace PhysicalSimulator
             }
         }
 
+        /// <summary>
+        /// Este método retorna el estado del botón
+        /// </summary>
+        /// <returns></returns>
         public bool getState()
         {
             if (state)
@@ -79,6 +119,10 @@ namespace PhysicalSimulator
             return false;
         }
 
+        /// <summary>
+        /// Este método cambia el estado del botón si se presionó
+        /// </summary>
+        /// <returns></returns>
         public bool setState()
         {
             if (this.Collide())
@@ -94,6 +138,10 @@ namespace PhysicalSimulator
             return false;
         }
 
+        /// <summary>
+        /// Este método verifica la colisión del botón con el mouse.
+        /// </summary>
+        /// <returns></returns>
         public bool Collide()
         {
             return this.collider.ClickOnMouseCollider(this);
