@@ -20,8 +20,8 @@ namespace PhysicalSimulator
         SpriteBatch spriteBatch;
         List<Texture2D> texturas = new List<Texture2D>();
         Entity entity = new Entity();
-        TextBox text,text1, mousex,mousey;
-        Button Iniciar;
+        TextBox mousex,mousey;
+        Button Iniciar, Reporte; Reportes form;
         TextBox tbVelocidadX, tbVelocidadY, tbAceleracionX, tbAceleracionY, LabelVX, LabelVY, LabelAX, LabelAY;
         float delayStartButton = 200f;
         float ellapsedTimeButton = 0f;
@@ -90,8 +90,10 @@ namespace PhysicalSimulator
             Iniciar = new Button(false, 0.2f, 0.5f, 7, texturas[1], texturas[3], texturas[4], spriteBatch, new Vector2(1154, 672), new Rectangle(1089, 642, 100, 20));
             Iniciar.input = "iniciar";
 
-            text = new TextBox(false, 0.2f, 0.5f, 6, texturas[1], texturas[3], texturas[4], spriteBatch, new Vector2(200, 100), new Rectangle(135, 70, 85, 20));
-            text1 = new TextBox(false, 0.2f, 0.5f, 6, texturas[1], texturas[3], texturas[4], spriteBatch, new Vector2(200, 200), new Rectangle(200, 200, 146, 40));
+            Reporte = new Button(false, 0.2f, 0.5f, 11, texturas[1], texturas[3], texturas[4], spriteBatch, new Vector2(1154, 600), new Rectangle(1089, 570, 157, 20));
+            Reporte.input = "ver reporte";
+
+            
             mousex = new TextBox(false, 0.2f, 0.5f, 6, texturas[1], texturas[3], texturas[4], spriteBatch, new Vector2(600, 200), new Rectangle(600, 200, 146, 40));
             mousey = new TextBox(false, 0.2f, 0.5f, 6, texturas[1], texturas[3], texturas[4], spriteBatch, new Vector2(600, 250), new Rectangle(700, 200, 146, 40));
             //text1.input = "culo";
@@ -153,6 +155,7 @@ namespace PhysicalSimulator
                                     new Vector2(ax, ay),
                                     new Rectangle(),
                                     0.0f);
+                entity.InitializeHistory();
             }
             if (active && Iniciar.Pressed() && ellapsedTimeButton > delayStartButton)
             {
@@ -174,9 +177,24 @@ namespace PhysicalSimulator
                 tbVelocidadY.TurnOnBuffer();
             }
 
-            mousex.input = Mouse.GetState().X.ToString();
-            mousey.input = Mouse.GetState().Y.ToString();
+            if (Reporte.Pressed() && !active && ellapsedTimeButton > delayStartButton)
+            {
+                ellapsedTimeButton = 0;
+                form = new Reportes(entity.History);
+                
+                form.Show();
+                form.Refresh();
+                this.Exit();
+            }
 
+           // mousex.input = Mouse.GetState().X.ToString();
+            //mousey.input = Mouse.GetState().Y.ToString();
+            if (entity.position.X > 1300 || entity.position.Y > 950)
+            {
+                this.active = false;
+                Iniciar.input = "iniciar";
+                ellapsedTimeButton = 0;
+            }
             base.Update(gameTime);
         }
 
@@ -192,7 +210,6 @@ namespace PhysicalSimulator
 
             spriteBatch.Begin();
             //text.DrawBackGround();
-            text.DrawText();
             tbVelocidadX.DrawText();
             tbVelocidadY.DrawText();
             tbAceleracionX.DrawText();
@@ -201,10 +218,10 @@ namespace PhysicalSimulator
             LabelVY.DrawText();
             LabelAX.DrawText();
             LabelAY.DrawText();
-            text1.DrawText();
-            mousex.DrawText();
-            mousey.DrawText();
+            //mousex.DrawText();
+            //mousey.DrawText();
             Iniciar.DrawText();
+            Reporte.DrawText();
             entity.Draw(spriteBatch);
             //spriteBatch.Draw(texturas[0], new Vector2(GraphicsDevice.Viewport.Width / 2 - texturas[0].Width / 2, GraphicsDevice.Viewport.Height / 2 - texturas[0].Height / 2), Color.White);
             //spriteBatch.Draw(texturas[1], new Vector2(GraphicsDevice.Viewport.Width / 2 - texturas[1].Width / 2 + 100, GraphicsDevice.Viewport.Height / 2 - texturas[1].Height / 2 + 80), Color.White);

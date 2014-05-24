@@ -45,3 +45,4 @@ C:\Users\JuanFelipe\Documents\GitHub\PhysicalSimulator\PhysicalSimulator\obj\x86
 C:\Users\JuanFelipe\Documents\GitHub\PhysicalSimulator\PhysicalSimulator\bin\WindowsGL\Debug\Content\font3.png
 C:\Users\JuanFelipe\Documents\GitHub\PhysicalSimulator\PhysicalSimulator\bin\WindowsGL\Debug\Content\font4.png
 C:\Users\JuanFelipe\Documents\GitHub\PhysicalSimulator\PhysicalSimulator\bin\WindowsGL\Debug\PhysicalSimulator.XML
+C:\Users\JuanFelipe\Documents\GitHub\PhysicalSimulator\PhysicalSimulator\obj\x86\Debug\PhysicalSimulator.Reportes.resources

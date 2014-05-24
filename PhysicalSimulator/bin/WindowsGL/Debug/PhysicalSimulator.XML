@@ -536,5 +536,22 @@
             <param name="tag">recibe un tag a comparar</param>
             <returns>retorna true si el tag coincide con la entidad, de lo contrario retorna false.</returns>
         </member>
+        <member name="F:PhysicalSimulator.Reportes.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:PhysicalSimulator.Reportes.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:PhysicalSimulator.Reportes.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
     </members>
 </doc>

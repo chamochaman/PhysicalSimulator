@@ -67,6 +67,13 @@ namespace PhysicalSimulator
         /// </summary>
         private Rectangle rectangle;
 
+        public void InitializeHistory()
+        {
+            this.History = new List<Dictionary<float, List<float>>>();
+            History.Add(new Dictionary<float, List<float>>());
+            History.Add(new Dictionary<float, List<float>>());
+            History.Add(new Dictionary<float, List<float>>());
+        }
 
         /// <summary>
         /// Este método sirve para inicializar la entidad.
@@ -80,9 +87,7 @@ namespace PhysicalSimulator
             this.angle = angle;
             this.totalTime = 0;
             this.rectangle = rectangle;
-            History.Add(new Dictionary<float, List<float>>());
-            History.Add(new Dictionary<float, List<float>>());
-            History.Add(new Dictionary<float, List<float>>());
+            this.InitializeHistory();
         }
         /// <summary>
         /// Este método sirve para actualizar una entidad.
@@ -161,7 +166,7 @@ namespace PhysicalSimulator
 
         public Entity()
         {
-            this.History = new List<Dictionary<float, List<float>>>();
+           
         }
     }
 }
