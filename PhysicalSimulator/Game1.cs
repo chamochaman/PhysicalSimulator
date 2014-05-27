@@ -121,8 +121,17 @@ namespace PhysicalSimulator
         {
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
-            
-            // TODO: Add your update logic here
+
+            //Si se presiona el botón f1 instancia el form de ayuda, y cierra la ventana de simulación
+            if (Keyboard.GetState().IsKeyDown(Keys.F1))
+            {
+                Ayuda form = new Ayuda();
+
+                form.Show();
+                form.Refresh();
+                this.Exit();
+            }
+            // si se activa la simulación empieza a ejecutar el método UpDate de la entidad
             if (Iniciar.Pressed() && !active && ellapsedTimeButton > delayStartButton)
             {
                 ellapsedTimeButton = 0;
@@ -157,6 +166,7 @@ namespace PhysicalSimulator
                                     0.0f);
                 entity.InitializeHistory();
             }
+            //Si se se presiona el botón PAUSAR, se reinicia el botón y se desactiva la simulación
             if (active && Iniciar.Pressed() && ellapsedTimeButton > delayStartButton)
             {
                 this.active = false;
@@ -169,6 +179,7 @@ namespace PhysicalSimulator
             if(active)            
                 entity.Update(gameTime); 
             //text.input = i.ToString();
+            //Si no está activa la simulación, permite abrir el buffer para la entrada de los datos a los text boxes.
             if (!active)
             {
                 tbAceleracionX.TurnOnBuffer();
@@ -177,6 +188,7 @@ namespace PhysicalSimulator
                 tbVelocidadY.TurnOnBuffer();
             }
 
+            //Si se presiona el botón de VER REPORTE, se instancia el form de reportes, y se cierra la ventana de simulación
             if (Reporte.Pressed() && !active && ellapsedTimeButton > delayStartButton)
             {
                 ellapsedTimeButton = 0;
@@ -207,7 +219,7 @@ namespace PhysicalSimulator
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
             // TODO: Add your drawing code here
-
+            //Se dibuja en pantalla todas las entidades
             spriteBatch.Begin();
             //text.DrawBackGround();
             tbVelocidadX.DrawText();
