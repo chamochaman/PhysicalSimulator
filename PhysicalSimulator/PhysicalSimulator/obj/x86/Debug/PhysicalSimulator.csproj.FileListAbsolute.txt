@@ -1,0 +1,11 @@
+c:\users\juanfelipe\documents\visual studio 2010\Projects\PhysicalSimulator\PhysicalSimulator\bin\WindowsGL\Debug\SDL.dll
+c:\users\juanfelipe\documents\visual studio 2010\Projects\PhysicalSimulator\PhysicalSimulator\bin\WindowsGL\Debug\Content\Boton1.bmp
+c:\users\juanfelipe\documents\visual studio 2010\Projects\PhysicalSimulator\PhysicalSimulator\bin\WindowsGL\Debug\Content\Menu1.bmp
+c:\users\juanfelipe\documents\visual studio 2010\Projects\PhysicalSimulator\PhysicalSimulator\bin\WindowsGL\Debug\PhysicalSimulator.exe
+c:\users\juanfelipe\documents\visual studio 2010\Projects\PhysicalSimulator\PhysicalSimulator\bin\WindowsGL\Debug\PhysicalSimulator.pdb
+c:\users\juanfelipe\documents\visual studio 2010\Projects\PhysicalSimulator\PhysicalSimulator\bin\WindowsGL\Debug\Lidgren.Network.dll
+c:\users\juanfelipe\documents\visual studio 2010\Projects\PhysicalSimulator\PhysicalSimulator\bin\WindowsGL\Debug\MonoGame.Framework.dll
+c:\users\juanfelipe\documents\visual studio 2010\Projects\PhysicalSimulator\PhysicalSimulator\bin\WindowsGL\Debug\OpenTK.dll
+c:\users\juanfelipe\documents\visual studio 2010\Projects\PhysicalSimulator\PhysicalSimulator\bin\WindowsGL\Debug\Tao.Sdl.dll
+c:\users\juanfelipe\documents\visual studio 2010\Projects\PhysicalSimulator\PhysicalSimulator\obj\x86\Debug\PhysicalSimulator.exe
+c:\users\juanfelipe\documents\visual studio 2010\Projects\PhysicalSimulator\PhysicalSimulator\obj\x86\Debug\PhysicalSimulator.pdb
